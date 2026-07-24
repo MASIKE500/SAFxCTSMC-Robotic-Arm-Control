@@ -2,9 +2,6 @@
 Simulation code and models for Synergistically Adaptive Fixed-Time Continuous Control of Robotic Manipulators.
 # Synergistically Adaptive Fixed-Time Continuous Control for Robotic Manipulators (SAFxCTSMC)
 
-[![MATLAB/Simulink](https://img.shields.io/badge/MATLAB%2FSimulink-R2023a%2FR2024b-blue.svg)](https://www.mathworks.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen.svg)](#)
 
 Official MATLAB/Simulink implementation and pre-computed datasets for the paper:  
 **"Synergistically Adaptive Fixed-Time Continuous Sliding Mode Control for Robotic Manipulators under Complex Disturbances"**
