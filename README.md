@@ -2,17 +2,13 @@
 Simulation code and models for Synergistically Adaptive Fixed-Time Continuous Control of Robotic Manipulators.
 # Synergistically Adaptive Fixed-Time Continuous Control for Robotic Manipulators (SAFxCTSMC)
 
-
-Official MATLAB/Simulink implementation and pre-computed datasets for the paper:  
-**"Synergistically Adaptive Fixed-Time Continuous Sliding Mode Control for Robotic Manipulators under Complex Disturbances"**
-
 ---
 
 ## 📌 Abstract & Overview
 
 Industrial manipulators operating in complex unstructured environments face severe challenges from unknown lumped disturbances, including modeling uncertainties, payload variations, and joint friction. While traditional sliding mode control exhibits strong robustness, its inherent chattering defect and initial-state-dependent convergence limit its precision. 
 
-To address these issues, this repository provides a novel **Synergistically Adaptive Fixed-Time Continuous Terminal Sliding Mode Composite Control (SAFxCTSMC)** strategy. The core novelty lies in the **dynamic bidirectional synergy between observation error and controller gain adaptation**. 
+To address these issues, this repository provides a novel **Synergistically Adaptive Fixed-Time Continuous Terminal Sliding Mode Composite Control (SAFxCTSMC)** strategy. 
 
 ### Key Contributions & Design Philosophy
 1. **Velocity-Error-Driven ASTWOS**: An Adaptive Super-Twisting Observer (ASTWOS) with equivalent control filtering is constructed to achieve rapid, smooth feedforward disturbance reconstruction without phase lag.
