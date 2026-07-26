@@ -17,6 +17,11 @@ To address these issues, this repository provides a novel **Synergistically Adap
 
 ---
 
+## Required Toolboxes:
+1. Robotics System Toolbox
+2. Simscape / Simscape Multibody
+3. Simulink Coder (Optional)
+
 ## 📁 Repository Structure
 
 ```text
