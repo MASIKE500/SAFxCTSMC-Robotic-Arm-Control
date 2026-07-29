@@ -1,11 +1,10 @@
 clear; clc;
-
-
 try
-    robot = importrobot('UR5.urdf', 'DataFormat', 'column');
+    robot = loadrobot('universalUR5', 'DataFormat', 'column');
 catch
-    error('未找到 UR5.urdf 文件，请检查路径。');
+    error('需要 Robotics System Toolbox');
 end
+
 robot.Gravity = [0 0 -9.81];
 
 Ts =0.001; 
@@ -28,8 +27,13 @@ gamma2  = [2; 2; 2; 1; 1; 1];
 
 omega_init = 1.0 * ones(6,1);
 omega_min  = 0.5 * ones(6,1);
-epsilon    = 0.05 * ones(6,1);  % 死区阈值
-delta      = 0.05;              % 平滑因子
+epsilon    = 0.05 * ones(6,1);  
+delta      = 0.05; 
+
+wo = 50; 
+beta1 = 3 * wo * ones(6,1);
+beta2 = 3 * wo^2 * ones(6,1);
+beta3 = wo^3 * ones(6,1);
 
 
 gamma1_val = 1.2; 
