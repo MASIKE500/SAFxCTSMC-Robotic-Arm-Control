@@ -2,9 +2,9 @@ clear; clc;
 
 
 try
-    robot = importrobot('fr3.urdf', 'DataFormat', 'column');
+    robot = importrobot('UR5.urdf', 'DataFormat', 'column');
 catch
-    error('未找到 fr3.urdf 文件，请检查路径。');
+    error('未找到 UR5.urdf 文件，请检查路径。');
 end
 robot.Gravity = [0 0 -9.81];
 
@@ -21,45 +21,40 @@ Kd = diag([ 60; 60;  60;  40;  40;40]);
 
 epsilon = 0.01*ones(6,1); 
 
-lambda1 = [60; 60; 60; 50; 50; 50];
-lambda2 = [6;   6;  6;  5;  5;  5];
-gamma1 = [20; 20; 20; 20; 20; 20]; 
-gamma2 = [0.2;   0.2;  0.2; 0.2;   0.2;  0.2]; 
-omega_init = 1.0* ones(6,1);
-delta = 0.05;
+lambda1 = [40; 40; 40; 15; 15; 15]; 
+lambda2 = [15; 15; 15; 5; 5; 5];
+gamma1  = [20; 20; 20; 10; 10; 10]; 
+gamma2  = [2; 2; 2; 1; 1; 1]; 
+
+omega_init = 1.0 * ones(6,1);
+omega_min  = 0.5 * ones(6,1);
+epsilon    = 0.05 * ones(6,1);  % 死区阈值
+delta      = 0.05;              % 平滑因子
 
 
 gamma1_val = 1.2; 
 gamma2_val = 0.8; 
+p = 1.5;          
+q = 2.0;          
+
 alpha1_val = [10; 10; 10; 5; 5; 5]; 
-alpha2_val = [5;   5;  5; 2; 2; 2]; 
+alpha2_val = [5; 5; 5; 2; 2; 2]; 
 
-k10 =[10; 10; 10;  5;  5;  5]; 
-k20 =[5;  5;  5;  2; 2; 2];
+k10 = [2; 2; 2; 1; 1; 1]; 
+k20 = [1; 1; 1; 0.5; 0.5; 0.5];
+k3  = [5; 5; 5; 2; 2; 2]; 
+k4  = [2; 2; 2; 1; 1; 1];
 
-eta1 = [20; 20; 20; 10; 10; 10]; 
-eta2 = [10; 10; 10;  5;  5;  5]; 
-
-k3 = [10; 10; 10;  5;  5;  5]; 
-k4 = [5;  5;  5;  2; 2; 2];
-
-eta1_val = [100; 100; 100; 50; 50; 50];
-eta2_val = [0.5; 0.5; 0.5; 0.1; 0.1; 0.1]; 
-K_adapt_init = [20; 20; 20; 10; 10; 10]; 
-
-lambda_int = [10; 10; 10; 5; 5; 5]; 
-
-gamma3_val = 1.2 * ones(6,1);
-
-K0  = [20;  20;  20;  10; 10; 10];
-K_sw =  [2; 2; 2; 1; 1; 1];
+mu           = 100;
+epsilon_link = 0.01;
 
 tau_rise = 0.005 * ones(6,1); 
-
 tau_fall = 0.2 * ones(6,1);   
 
-% Dynamic Boundary Layer
 phi_base = 0.02;
 phi_gain = 0.1; 
+
+eta1 = [50; 50; 50; 20; 20; 20]; 
+eta2 = [20; 20; 20; 10; 10; 10]; 
 
 
