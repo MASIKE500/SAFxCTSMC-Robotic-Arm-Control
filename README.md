@@ -22,6 +22,15 @@ To address these issues, this repository provides a novel **Synergistically Adap
 2. Simscape / Simscape Multibody
 3. Simulink Coder (Optional)
 
+## 📧 Contact & Citation
+
+If you have any questions, issues, or suggestions regarding the code or paper, please feel free to reach out:
+
+- **Primary Author:** Wei Guo
+- **Institution:** Jilin University of Chemical Technology
+- **Email:** `3534089020@qq.com`
+
+
 ## 📁 Repository Structure
 
 ```text
